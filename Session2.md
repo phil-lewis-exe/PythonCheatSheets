@@ -3,6 +3,8 @@
 
 This cheat sheet summarizes key commands for working with lists and loops in Python.
 
+https://g.co/gemini/share/3bd11baf8e38
+
 ---
 
 ## Chapter 3: Introducing Lists
