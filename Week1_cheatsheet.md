@@ -3,7 +3,7 @@
 
 This cheat sheet summarizes key commands for getting started with Python, including variables and simple data types.
 
-https://g.co/gemini/share/1581fd525e64
+https://g.co/gemini/share/afafecef3a7d
 
 ---
 
@@ -96,8 +96,27 @@ A variable stores a value. Think of it as a label for data.
     - Can only contain letters, numbers, and underscores.
     - Must start with a letter or an underscore, not a number.
     - No spaces are allowed (use underscores instead).
-    - Do not use names which already exist in Python, common mistakes include using: `sum`, `len`, `str`, `max`, `min`, `input`, `list`
+    - Avoid using Python keywords (like `print`).
     - Keep them short but descriptive (e.g., `user_name` is better than `un`).
+
+* **Avoid Overwriting Built-in Functions**
+    It is a common mistake to use a variable name that is already used by a Python built-in function. This will stop the original command from working.
+    
+    ```python
+    # This will cause an error
+    my_numbers = [1, 2, 3]
+    sum = sum(my_numbers) # This works the first time
+    print(sum)
+    # Output: 6
+    
+    # Now, if you try to use sum() again, it will fail
+    # because 'sum' is now the number 6, not the function.
+    more_numbers = [4, 5, 6]
+    sum(more_numbers)
+    # Output:
+    # TypeError: 'int' object is not callable
+    ```
+    Common built-in names to avoid are: `len`, `sum`, `int`, `float`, `str`, `list`, `dict`, `print`, `input`.
 
 * **Constants**
     A variable whose value should not be changed through the program. Convention is to use all caps.
@@ -249,21 +268,27 @@ A series of characters, surrounded by single `'` or double `"` quotes.
     # Output: 1.5
     ```
 
+* **Order of Operations**
+    Python follows the standard mathematical order of operations (PEMDAS/BODMAS). Multiplication/Division happen before Addition/Subtraction.
+    ```python
+    # Multiplication is done before addition
+    2 + 3 * 4
+    # Output: 14
+    ```
+
+* **Using Parentheses to Control Order**
+    You can use round brackets `()` to change the order of operations.
+    ```python
+    # The operation inside the parentheses is done first
+    (2 + 3) * 4
+    # Output: 20
+    ```
+
 * **Exponents**
     Use two asterisks `**`.
     ```python
     3**2
     # Output: 9
-    ```
-
-* **Floats (numbers with decimals)**
-    Python handles decimals automatically.
-    ```python
-    0.1 + 0.1
-    # Output: 0.2
-
-    2 * 0.2
-    # Output: 0.4
     ```
 
 * **Underscores in Numbers**
