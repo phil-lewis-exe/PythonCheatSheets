@@ -3,6 +3,8 @@
 
 This cheat sheet summarizes key commands for getting started with Python, including variables and simple data types.
 
+https://g.co/gemini/share/1581fd525e64
+
 ---
 
 ## Getting Started
