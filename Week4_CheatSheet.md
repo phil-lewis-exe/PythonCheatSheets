@@ -255,6 +255,21 @@ Functions can process data and `return` a value.
 
 ### Storing Functions in Modules
 
+To make a module called `pizza` create a file `pizza.py` then put in the functions / resources that make up the module 
+
+e.g. if we want a pizza module that contains the function `make_pizza()` create a file called `pizza.py` in the code directory and put in the following code:
+
+```python
+def make_pizza(size, *toppings):
+        """Summarize the pizza being ordered."""
+        print(f"\nMaking a {size}-inch pizza with the following toppings:")
+        for topping in toppings:
+            print(f"- {topping}")
+
+```
+
+Save the file, and you can then use it in other Python files.
+
 * **Import an Entire Module**
     (Assumes functions are in a file named `pizza.py`)
     ```python
