@@ -214,10 +214,18 @@ Functions can process data and `return` a value.
 * **Arbitrary Keyword Arguments (`**kwargs`)**
     The `**` packs arguments into a *dictionary*. Often named `**kwargs`.
     ```python
-    def build_profile(first, last, **user_info):
+    def build_profile(first, last, **kwargs):
         """Build a dictionary containing user info."""
+        # create the empty user info dictionary
+        user_info = {}
+    
+        # add first and last name items
         user_info['first_name'] = first
         user_info['last_name'] = last
+
+        # add the additional key value pairs from the kwargs
+        for key,value in kwargs.items():
+            user_info[key] = value
         return user_info
 
     user_profile = build_profile('albert', 'einstein',
@@ -225,6 +233,24 @@ Functions can process data and `return` a value.
                                  field='physics')
     print(user_profile)
     # Output: {'location': 'princeton', 'field': 'physics', 'first_name': 'albert', 'last_name': 'einstein'}
+    ```
+
+* **Arbitrary mixture of arguments (`*args`) and Keyword Arguments (`**kwargs`)**
+    ```python
+    def print_arguments(*args, **kwargs):
+        # print non-keyword argments
+        for item in args:
+            print(f"argument: {item}")
+        for key, value in kwargs.items():
+            print(f"keyword argument: {key} = {value}")
+        return
+
+    print_arguments(10, 20, name="Albert", loc="US")
+    # Output:
+    # argument: 10
+    # argument: 20
+    # keyword argument: name = Albert
+    # keyword argument: loc = US
     ```
 
 ### Storing Functions in Modules
