@@ -47,7 +47,16 @@ Methods for checking the existence and type of a file system entry.
 | **Change Directory** | `os.chdir('data')` | **Warning:** Changes the global Current Working Directory. Requires `import os`. |
 | **Delete File** | `Path("old_data.txt").unlink()` | **Deletes the file.** |
 | **List Directory** | `p.iterdir()` | Iterates over all files/folders in directory `p`. |
+| **Glob** | `p.glob("*.txt")` | Finds items matching the pattern in given folder / current working directory. |
 | **Glob (Recursive)** | `p.rglob("*.txt")` | Finds items matching the pattern in all subfolders. |
+
+**Example to work with set of files from `iterdir/glob`**: 
+
+```python
+p = Path.cwd()
+for filepath in p.iterdir():
+    print(filepath)
+```
 
 ---
 
@@ -68,6 +77,16 @@ Methods for checking the existence and type of a file system entry.
 | **Split Lines to Items** | `line.split(delimiter)` | `items = line.split(',')` |
 | **Convert to Int** | `int(string_value)` | `number = int(items[0])` |
 | **Convert to Float** | `float(string_value)` | `price = float(items[1])` |
+
+**Example of chaining processing steps**:
+
+```python
+mystr = "a b c D E F-h-i-j"
+mystr = mystr.lower().replace('-', ' ').split(' ')
+print(mystr)
+# ['a', 'b', 'c', 'd', 'e', 'f', 'h', 'i', 'j']
+```
+
 
 #### B. Nested Data (Hierarchical Structures)
 
